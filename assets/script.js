@@ -6,8 +6,8 @@ var quizQuestions = [
     },
     {
         question: "what is 'this' in JavaScript?",
-        options: ["An english word used to identify a specific person or thing close at hand or being indicated or experienced", "The this keyword refers to the object it belongs to", "A question in your quiz, dummy", "...this is fine"],
-        answer: ["The this keyword refers to the object it belongs to"]
+        options: ["'This' is word used to identify a specific person or thing close at hand or being indicated or experienced", "The 'this' keyword refers to the object it belongs to", "A question in your quiz, dummy", "...'this' is fine"],
+        answer: ["The 'this' keyword refers to the object it belongs to"]
     },
     {
         question: "A useful tool available in Chrome to help catch JavaScript errors is: ",
@@ -53,7 +53,7 @@ button.addEventListener("click", function() {
             };
         }, 1000);
     };
-    render(questionIndex)
+    render(questionIndex);
 });
 
 //displays the questions and answers on the page
@@ -96,7 +96,7 @@ function compare(event) {
 
     if (questionIndex >= quizQuestions.length) {
         gameOver();
-        createDiv.textContent = "The quiz is over! You answered " + score + "of" + quizQuestions.length + "correct, nice job!";
+        createDiv.textContent = "The quiz is over! You answered " + score + " of " + quizQuestions.length + " correct, nice job!";
     }
     else {
         render(questionIndex);
@@ -162,17 +162,17 @@ function gameOver() {
                 score: secondsRemaining
             }
             console.log(userScore);
-            var allScores = localStorage.getItem("allScores");
-            if (allScores === null) {
-                allScores = [];
+            var highScores = localStorage.getItem("highScores");
+            if (highScores === null) {
+                highScores = [];
             }
             else {
-                allScores = JSON.parse(allScores);
+                highScores = JSON.parse(highScores);
             }
-            allScores.push(userScore);
-            var newScore = JSON.stringify(allScores);
-            localStorage.setItem("allScores", newScore);
-            window.location.replace(".Highscores.html")
+            highScores.push(userScore);
+            var userScore = JSON.stringify(highScores);
+            localStorage.setItem("allScores", userScore);
+            window.location.replace("./Highscores.html")
         }
     });
 
