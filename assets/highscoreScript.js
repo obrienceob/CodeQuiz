@@ -15,7 +15,7 @@ if (highScores !== null) {
     for (var i = 0; i < highScores.length; i++) {
 
         var createLi = document.createElement("li");
-        createLi.textContent = highScores[i].takerInitials + " " + highScores[i].userScore;
+        createLi.textContent = highScores[i].takerInitials + " " + highScores[i].score;
         highScoreList.appendChild(createLi);
 
     };

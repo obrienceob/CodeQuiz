@@ -1,3 +1,4 @@
+//creating a variable to hold all the questions, answers, and options as strings
 var quizQuestions = [
     {
         question: "Which of the following is NOT a common datatype?",
@@ -26,14 +27,17 @@ var quizQuestions = [
     }
 ]
 
+//variables for the quiz
 var score = 0;
 var questionIndex = 0;
 
+//selevting the buttons and elements in the html which the game will be impacting
 var time = document.querySelector("#timer");
 var button = document.querySelector("#startTimer");
 var questionsDiv = document.querySelector("#quizDiv");
 var container = document.querySelector(".container");
 
+//variables for the timer
 var timeLeft = 75;
 var originalTime = 0;
 var penalty = 10;
@@ -56,7 +60,7 @@ button.addEventListener("click", function() {
     render(questionIndex);
 });
 
-//displays the questions and answers on the page
+//displays the questions and answers on the page, as a new list item in an list within the quizDiv
 function render(questionIndex) {
     quizDiv.innerHTML = "";
     listCreate.innerHTML = "";
@@ -104,7 +108,7 @@ function compare(event) {
     quizDiv.appendChild(createDiv);
 }
 
-//gameOver will append the last page
+//gameOver will append the last page, and display the score of the test taker. It also contains the storage of the user score and initals, which will be displayed on a separate html page
 function gameOver() {
     quizDiv.innerHTML = "";
     timeLeft.innerHTML = "";
@@ -151,7 +155,7 @@ function gameOver() {
 
     Submit.addEventListener("click", function() {
         var takerInitials = createId.value;
-
+        
         if (takerInitials === null) {
 
             console.log("no initials entered!");
@@ -170,9 +174,9 @@ function gameOver() {
                 highScores = JSON.parse(highScores);
             };
             highScores.push(userScore);
-            var userScore = JSON.stringify(highScores);
-            localStorage.setItem("highScores", userScore);
-            window.location.replace("./Highscores.html")
+            var addScore = JSON.stringify(highScores);
+            localStorage.setItem("highScores", addScore);
+            window.location.replace("./Highscores.html");
         };
     });
 
