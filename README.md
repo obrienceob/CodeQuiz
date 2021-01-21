@@ -14,7 +14,7 @@ Once the quiz is complete, your score will be displayed as the seconds remaining
 
 Here is a screenshot of the quiz:
 
-![quiz screenshot]</assets/screenshotOfQuiz.png>
+<img src="assets/screenshotOfQuiz.png" alt="screenshot of quiz>
 
 
 [Code]
