@@ -168,12 +168,12 @@ function gameOver() {
             }
             else {
                 highScores = JSON.parse(highScores);
-            }
+            };
             highScores.push(userScore);
             var userScore = JSON.stringify(highScores);
-            localStorage.setItem("allScores", userScore);
+            localStorage.setItem("highScores", userScore);
             window.location.replace("./Highscores.html")
-        }
+        };
     });
 
 }
